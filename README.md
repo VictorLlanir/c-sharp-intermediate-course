@@ -8,7 +8,7 @@ The current project is divided in two main folders:
 ## Implementations
 
 #### Stopwatch
-It have four methods: `Start(), Stop(), CurrentDuration() and TotalDuration()`. The last two accepts a input parameter,
+It have four methods: `Start()`, `Stop()`, `CurrentDuration()` and `TotalDuration()`. The last two accepts a input parameter,
 which is a value of the enum StopwatchDurationFormat, to indicate in what measure unit the data should be retrieved.
 
 <i>CurrentDuration</i>: the duration of the current running stopwatch, the time elapse between a `Start()` call and a `Stop()` call.
