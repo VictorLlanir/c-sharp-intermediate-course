@@ -28,4 +28,19 @@ stopwatch.CurrentDuration(); // Will retrieve the current duration of the Stopwa
 ```
 
 #### StackOverflow Post
-Not implemented yet...
+Simple class representing a StackOverflow Post.
+
+It has two main methods: `UpVote()` and `DownVote()`. Each one sum or subtract a vote from the post.
+To use it, just instantiate a new Post and begin to vote!
+
+```
+var stackOverflowPost = new Post("Lorem ipsum", "Lorem ipsum dolor sit amet");
+
+stackOverflowPost.UpVote();
+stackOverflowPost.UpVote();
+stackOverflowPost.UpVote();
+
+stackOverflowPost.DownVote();
+
+// stackOverflowPost should be 2!
+```

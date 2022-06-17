@@ -1,7 +1,6 @@
 ﻿using Classes.Module.StopwatchContext;
 using System;
 using System.Threading.Tasks;
-using System.Timers;
 using Xunit;
 
 namespace Modules.Tests.Classes

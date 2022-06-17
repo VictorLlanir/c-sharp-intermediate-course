@@ -1,32 +1,31 @@
 ﻿namespace Classes.Module.StackOverflowContext
 {
-    public class Post : BaseModel
+    public class Post
     {
-        public Post(string description, string title, string author, params string[] tags) : base(author)
+        public Post(string title, string description)
         {
-            Description = description;
             Title = title;
-            Tags = tags;
+            Description = description;
+            CreatedAt = DateTime.Now;
+            Votes = 0;
         }
 
-        public string Description { get; private set; }
         public string Title { get; private set; }
-        public IEnumerable<string> Tags { get; private set; }
+        public string Description { get; private set; }
+        public DateTime CreatedAt { get; private set; }
         public int Votes { get; private set; }
-
-        public void Update(string description, string title)
-        {
-            Description = description;
-            Title = title;
-            Update();
-        }
 
         public void UpVote() => Votes++;
         public void DownVote() => Votes--;
 
+        public void Update(string description)
+        {
+            Description = description;
+        }
+
         public override string ToString()
         {
-            return $"{Title} by {Author} at {CreatedAt}";
+            return $"{Title} at {CreatedAt:G}";
         }
     }
 }
