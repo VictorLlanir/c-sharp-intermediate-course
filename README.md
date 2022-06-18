@@ -24,7 +24,7 @@ stopwatch.Start();
 
 stopwatch.Stop();
 
-stopwatch.CurrentDuration(); // Will retrieve the current duration of the Stopwatch in secods.
+stopwatch.CurrentDuration(); // Will retrieve the current duration of the Stopwatch in seconds.
 ```
 
 #### StackOverflow Post
@@ -42,5 +42,5 @@ stackOverflowPost.UpVote();
 
 stackOverflowPost.DownVote();
 
-// stackOverflowPost should be 2!
+// stackOverflowPost.Votes count should be 2!
 ```
