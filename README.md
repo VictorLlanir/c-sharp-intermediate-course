@@ -44,3 +44,17 @@ stackOverflowPost.DownVote();
 
 // stackOverflowPost.Votes count should be 2!
 ```
+
+#### Stack
+Simple stack containing three methods: `void Push(T item)`, `T Pop()` and `void Clear()`.
+
+```
+var stack = new Stack<int>();
+            
+stack.Push(1);
+stack.Push(2);
+
+stack.Pop(); // Should return 2
+
+stack.Clear(); // Should make the stack empty
+```
