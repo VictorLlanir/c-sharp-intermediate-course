@@ -1,17 +1,33 @@
-﻿namespace Polymorphism.Module.DatabaseContext.Implementations
+﻿using Polymorphism.Module.DatabaseContext.Contracts;
+using Polymorphism.Module.DatabaseContext.Enums;
+
+namespace Polymorphism.Module.DatabaseContext.Implementations
 {
-    public class SqlConnection : DbConnection
+    public class SqlConnection : DbConnection, ISqlConnection
     {
         public SqlConnection(string connectionString, TimeSpan? timeout = null) : base(connectionString, timeout) { }
 
+        public override ConnectionState ConnectionState { get; protected set; }
+
         public override void Close()
         {
-            throw new NotImplementedException();
+            if (ConnectionState == ConnectionState.Closed)
+            {
+                throw new InvalidOperationException("A Connection cannot be closed since it is not openned.");
+            }
+
+            ConnectionState = ConnectionState.Closed;
         }
 
-        public override void Open()
+        public override ISqlConnection Open()
         {
-            throw new NotImplementedException();
+            if (ConnectionState == ConnectionState.Open)
+            {
+                throw new InvalidOperationException("A Connection cannot be openned since it is alerady openned.");
+            }
+
+            ConnectionState = ConnectionState.Open;
+            return this;
         }
     }
 }

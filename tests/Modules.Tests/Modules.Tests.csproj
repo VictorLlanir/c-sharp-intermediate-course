@@ -22,12 +22,12 @@
 
   <ItemGroup>
     <Folder Include="Interfaces\" />
-    <Folder Include="Polymorphism\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Classes.Module\Classes.Module.csproj" />
     <ProjectReference Include="..\..\src\Inheritance.Module\Inheritance.Module.csproj" />
+    <ProjectReference Include="..\..\src\Polymorphism.Module\Polymorphism.Module.csproj" />
   </ItemGroup>
 
 </Project>

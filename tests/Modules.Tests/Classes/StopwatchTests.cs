@@ -20,7 +20,7 @@ namespace Modules.Tests.Classes
             var expectedDuration = duration;
 
             stopwatch.Start();
-            await Task.Delay(duration * 1000);
+            await Task.Delay(TimeSpan.FromSeconds(duration));
             stopwatch.Stop();
 
             var currentDurationInSeconds = stopwatch.CurrentDuration();
