@@ -7,6 +7,7 @@ namespace Polymorphism.Module.DbCommandContext
     {
         private readonly DbConnection _connection;
         private readonly string _instruction;
+        private bool _instructionExecuted = false;
 
         public DbCommand(DbConnection connection, string instruction)
         {
@@ -17,8 +18,10 @@ namespace Polymorphism.Module.DbCommandContext
         public void Execute()
         {
             if (_connection.ConnectionState == ConnectionState.Closed) _connection.Open();
-            // Run command
+            _instructionExecuted = true;
             _connection.Close();
         }
+
+        public bool IsExecuted => _instructionExecuted;
     }
 }

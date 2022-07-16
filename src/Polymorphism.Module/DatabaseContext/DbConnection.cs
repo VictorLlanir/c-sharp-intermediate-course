@@ -5,7 +5,7 @@ namespace Polymorphism.Module.DatabaseContext
 {
     public abstract class DbConnection : IDisposable, IDbConnection
     {
-        public abstract ConnectionState ConnectionState { get; set; }
+        public abstract ConnectionState ConnectionState { get; protected set; }
 
         public DbConnection(string connectionString, TimeSpan? timeout = null)
         {
